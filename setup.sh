@@ -1,7 +1,6 @@
 #!/bin/bash
-apt install pip3 git
-pip3 install gitpython
-git clone https://github.com/CSSEGISandData/COVID-19.git ./data
+#apt install pip3
+pip install -r requirements.txt
 CRTDIR=$(pwd)
 TIMECMD="0 15 * * * root"
 PYFILENAME="/daily_routine.py"
