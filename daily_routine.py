@@ -30,6 +30,10 @@ for files in cases:
             output_csv.writerow(data_line)
             if row[1] == "China":
                 data_total += numpy.array([int(x) for x in row[start_col:start_col+60]])
-                print(data_total)
+    input_csv = csv.reader(open(files[0], 'r'))
     output_csv = csv.writer(open(files[2],'w'))
+    for row in input_csv:
+        if row[1] == "Country/Region":
+            start_col = len(row) - 60
+            output_csv.writerow(row[start_col:start_col+60])
     output_csv.writerow(data_total)
